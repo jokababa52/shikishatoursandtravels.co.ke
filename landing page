@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shikisha Tours & Travel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background: #c75f00;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .section h2 {
+      margin-bottom: 1.5rem;
+      color: #c75f00;
+    }
+    .btn {
+      display: inline-block;
+      background: #c75f00;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Shikisha Tours & Travel</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Tours</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Discover Kenya With Us</h1>
+    <p>Unforgettable safaris, cultural adventures, and beach escapes</p>
+    <a href="#tours" class="btn">Explore Packages</a>
+  </section>
+
+  <!-- Featured Tours -->
+  <section id="tours" class="section">
+    <h2>Featured Tours</h2>
+    <p>Experience the magic of Africa with our curated itineraries</p>
+    <!-- Placeholder for tours -->
+    <div>
+      <h3>7-Day Explore Kenya</h3>
+      <p>Masai Mara • Lake Nakuru • Naivasha • Amboseli</p>
+      <a href="#" class="btn">View Itinerary</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" style="background:#f9f9f9;">
+    <h2>Why Choose Shikisha?</h2>
+    <p>✔ Local expertise<br>✔ Tailored experiences<br>✔ Trusted by explorers worldwide</p>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="section">
+    <h2>Stay Updated</h2>
+    <p>Sign up for travel deals, updates & tips</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Shikisha Tours and Travel. All rights reserved.</p>
+    <p>
+      <a href="#">Terms & Conditions</a> | 
+      <a href="#">Privacy Policy</a>
+    </p>
+    <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+  </footer>
+
+</body>
+</html>
