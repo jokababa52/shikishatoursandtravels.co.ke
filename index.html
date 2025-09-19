@@ -97,11 +97,82 @@
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="section" style="background:#f9f9f9;">
-    <h2>Why Choose Shikisha?</h2>
-    <p>✔ Local expertise<br>✔ Tailored experiences<br>✔ Trusted by explorers worldwide</p>
-  </section>
+  <!-- Why Choose Us Section -->
+<section class="why-choose-us">
+  <h2>Why Choose Shikisha?</h2>
+  <div class="features">
+    <div class="feature">
+      <img src="icons/support.png" alt="Customer Support Icon" class="icon">
+      <h3>24/7 Customer Support</h3>
+      <p>No matter the time zone, we're here to help 24/7/365.</p>
+    </div>
+    <div class="feature">
+      <img src="icons/license.png" alt="Licensed Operator Icon" class="icon">
+      <h3>Licensed Tour/Safari Operator</h3>
+      <p>Plan and book with confidence. <a href="https://tra.go.ke/licensing-2/list-of-entities" target="_blank">Verify our license</a>.</p>
+    </div>
+    <div class="feature">
+      <img src="icons/moneyback.png" alt="Money Back Guarantee Icon" class="icon">
+      <h3>Money Back Guarantee</h3>
+      <p>Explore our flexible <a href="https://shikishatoursandtravels.co.ke/booking-terms-conditions/" target="_blank">Booking & Cancellation Policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.why-choose-us {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f9f9f9;
+}
+.why-choose-us h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #c75f00; /* brand orange */
+}
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.feature {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+.feature .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  filter: hue-rotate(-20deg) saturate(150%) brightness(1.1); /* subtle orange tint */
+}
+.feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #c75f00; /* brand orange */
+}
+.feature p {
+  font-size: 0.95rem;
+  color: #444;
+}
+.feature a {
+  color: #c75f00; /* brand orange links */
+  text-decoration: none;
+  font-weight: 500;
+}
+.feature a: hover {
+  text-decoration: underline;
+}
+</style>
 
   <!-- Newsletter Signup -->
   <section class="section">
