@@ -49,20 +49,21 @@ nav a:hover {
 </head>
 <body>
 
-  <!-- ✅ Header -->
+<!-- Header -->
 <header>
-  <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
-       alt="Shikisha Tours & Travel Logo" class="logo">
-
-  <!-- Navigation -->
-  <nav id="nav-menu">
-    <a href="#">Home</a>
-    <a href="#">Tours</a>
-    <a href="#">About</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
-  </nav>
-
+  <div class="container">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
+         alt="Shikisha Tours Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#quote" class="cta">Get a Free Quote</a></li>
+      </ul>
+    </nav>
+  </div>
   <!-- Hamburger Button -->
   <button class="hamburger" id="hamburger">&#9776;</button>
 </header>
@@ -70,23 +71,16 @@ nav a:hover {
 <style>
 /* Header */
 header {
-  background: #fff;
-  color: #333;
-  padding: 0.8rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background: #ffffff; /* white background */
+  padding: 10px 0; /* same height as before */
+  border-bottom: 1px solid #eee; /* subtle separation */
 }
 
-/* Logo */
 .logo {
-  width: 250px;
+  width: 250px; /* enlarged logo */
   height: auto;
 }
+
 
 /* Navigation */
 nav {
