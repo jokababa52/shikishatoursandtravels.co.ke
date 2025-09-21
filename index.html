@@ -13,56 +13,142 @@
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-    }
     header {
-      background: #c75f00;
-      color: #fff;
-      padding: 0.8rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header img.logo {
-      height: 50px; /* adjust as needed */
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem;
-      transition: background 0.3s ease, border-radius 0.3s ease;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.2);
-      border-radius: 5px;
-    }
+  background: #fff; /* ✅ White background */
+  color: #333;      /* Dark text for contrast */
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* subtle shadow for depth */
+}
+
+/* Logo */
+header img {
+  width: 250px; /* ✅ consistent logo size */
+  height: auto;
+}
+
+/* Navigation links */
+nav a {
+  color: #333; /* Dark for visibility on white */
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #22a9e6; /* ✅ Brand orange on hover */
+}
+      
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <!-- Logo left -->
-    <a href="index.html">
-      <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel" class="logo">
-    </a>
+  <!-- ✅ Header -->
+<header>
+  <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
+       alt="Shikisha Tours & Travel Logo" class="logo">
 
-    <!-- Nav right -->
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Tours</a>
-      <a href="#">About</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav id="nav-menu">
+    <a href="#">Home</a>
+    <a href="#">Tours</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Hamburger Button -->
+  <button class="hamburger" id="hamburger">&#9776;</button>
+</header>
+
+<style>
+/* Header */
+header {
+  background: #fff;
+  color: #333;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo {
+  width: 250px;
+  height: auto;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c75f00;
+}
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    display: none; /* hidden by default */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  nav.show {
+    display: flex; /* visible when toggled */
+  }
+
+  .hamburger {
+    display: block;
+    color: #333;
+  }
+}
+</style>
+
+<script>
+// Toggle mobile menu
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+</script>
+
 
   <!-- ✅ Hero Slider Section -->
 <section class="hero-slider">
