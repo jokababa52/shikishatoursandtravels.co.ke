@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shikisha Tours & Travel</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:db8babc8140b9b1a92a2a2d78735bdf3/directUpload/user-thumbnail.png" type="image/png">
+
   <style>
     body {
       margin: 0;
@@ -13,62 +17,44 @@
     header {
       background: #c75f00;
       color: #fff;
-      padding: 1rem;
-      text-align: center;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
+      z-index: 1000;
+    }
+    header img.logo {
+      height: 50px; /* adjust as needed */
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
     }
     nav a {
       color: #fff;
-      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5rem;
+      transition: background 0.3s ease, border-radius 0.3s ease;
     }
-    .hero {
-      background: url('hero-image.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    .section {
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .section h2 {
-      margin-bottom: 1.5rem;
-      color: #c75f00;
-    }
-    .btn {
-      display: inline-block;
-      background: #c75f00;
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      margin-top: 1rem;
-      text-decoration: none;
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
       border-radius: 5px;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 5px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>Shikisha Tours & Travel</h1>
+    <!-- Logo left -->
+    <a href="index.html">
+      <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" alt="Shikisha Tours & Travel" class="logo">
+    </a>
+
+    <!-- Nav right -->
     <nav>
       <a href="#">Home</a>
       <a href="#">Tours</a>
