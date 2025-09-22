@@ -58,10 +58,8 @@ nav a:hover {
            alt="Shikisha Tours & Travel Logo" class="logo">
     </a>
 
-    <!-- Hamburger Menu -->
-    <button class="hamburger" id="hamburger">
-      ☰
-    </button>
+    <!-- Hamburger Menu (no ☰ inside) -->
+    <button class="hamburger" id="hamburger"></button>
 
     <!-- Navigation -->
     <nav id="nav-menu">
@@ -154,11 +152,26 @@ header.shrink .logo {
 /* Hamburger Button */
 .hamburger {
   display: none;
-  font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 28px;
+  z-index: 1001;
+  position: relative;
+}
+
+/* Default ☰ icon */
+.hamburger::before {
+  content: "☰";
+  font-size: 28px;
+  color: #333;
+}
+
+/* X icon when active */
+.hamburger.active::before {
+  content: "✖";
+  font-size: 28px;
+  color: #fff; /* contrast on blue bg */
 }
 
 /* Mobile Menu */
@@ -167,13 +180,15 @@ header.shrink .logo {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 80%;
+    width: 100%;   /* ✅ Full screen */
     height: 100%;
     background: #22A9E6;
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
     transition: left 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   nav.show {
@@ -188,11 +203,12 @@ header.shrink .logo {
 
   nav ul li a {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 
   .mobile-cta {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .mobile-cta .cta {
@@ -212,9 +228,8 @@ header.shrink .logo {
 
   .hamburger {
     display: block;
-    color: #333;
-    z-index: 1000;
   }
+}
 
   /* Hamburger as X */
   .hamburger.active::before {
