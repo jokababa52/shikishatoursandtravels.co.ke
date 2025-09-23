@@ -95,13 +95,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* ✅ allows absolute positioning for hamburger/cta */
 }
 
+  
 /* Logo */
 .logo {
   width: 250px;
-  height: auto;
-  transition: all 0.3s ease;
+  margin-left: 0; /* ✅ less push */
 }
 
 /* Desktop Navigation */
@@ -124,7 +125,7 @@ nav ul li a:hover {
   color: #c75f00;
 }
 
-/* CTA Button */
+/* CTA button (desktop) */
 nav ul li .cta {
   background: #c75f00;
   color: #fff !important;
@@ -134,10 +135,39 @@ nav ul li .cta {
   transition: all 0.3s ease;
   display: inline-block;
 }
+  
 
 nav ul li .cta:hover {
-  background: #a74c00;
+  background: #22a9e6;  /* ✅ secondary brand color on hover */
   transform: scale(1.05);
+
+  /* Mobile view adjustments */
+@media (max-width: 768px) {
+  .logo {
+    width: 200px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* CTA reposition in mobile header */
+  header .cta-btn, 
+  nav ul li .cta {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    position: absolute;
+    right: 60px;  /* ✅ shifts slightly left */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #c75f00;
+    border-radius: 25px;
+    white-space: nowrap;
+  }
+
+  nav ul li .cta:hover {
+    background: #22a9e6;
+  }
 }
 
 /* Shrink effect on scroll */
@@ -149,17 +179,21 @@ header.shrink .logo {
   width: 180px;
 }
 
-/* Hamburger Button */
+/* Hamburger button */
 .hamburger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 28px;
-  z-index: 1001;
-  position: relative;
+  z-index: 1100;
+  position: absolute;
+  right: 15px;  /* ✅ ensures it’s fully visible */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+  
 /* Default ☰ icon */
 .hamburger::before {
   content: "☰";
