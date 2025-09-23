@@ -13,251 +13,198 @@
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
+    }
+
+    /* Header */
     header {
-  background: #fff; /* ✅ White background */
-  color: #333;      /* Dark text for contrast */
-  padding: 0.8rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* subtle shadow for depth */
-}
+      background: #fff;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
 
-/* Logo */
-header img {
-  width: 250px; /* ✅ consistent logo size */
-  height: auto;
-}
+    /* Logo */
+    .logo {
+      width: 250px;
+      height: auto;
+    }
 
-/* Navigation links */
-nav a {
-  color: #333; /* Dark for visibility on white */
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
+    /* Desktop Nav */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
 
-nav a:hover {
-  color: #22a9e6; /* ✅ Brand orange on hover */
-}
-      
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #22A9E6;
+    }
+
+    /* CTA Button */
+    nav ul li .cta {
+      background: #22A9E6;
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    nav ul li .cta:hover {
+      background: #0f8dc0;
+      transform: scale(1.05);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      z-index: 1001;
+    }
+
+    .hamburger::before {
+      content: "☰";
+      font-size: 28px;
+      color: #333;
+    }
+
+    .hamburger.active::before {
+      content: "✖";
+      color: #fff; /* contrast on blue menu */
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: #22A9E6;
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      nav.show {
+        left: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+
+      nav ul li a {
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+
+      .mobile-cta {
+        margin-top: 30px;
+        width: 100%;
+      }
+
+      .mobile-cta .cta {
+        background: #fff;
+        color: #22A9E6 !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+      }
+
+      .mobile-cta .cta:hover {
+        background: #f0f0f0;
+        color: #22A9E6 !important;
+      }
+
+      .hamburger {
+        display: block;
+        margin-left: auto;
+      }
+
+      /* Logo shrinks slightly */
+      header .logo {
+        width: 200px;
+      }
+    }
+
+    /* Shrink on scroll */
+    header.shrink {
+      padding: 6px 1rem;
+    }
+
+    header.shrink .logo {
+      width: 180px;
+    }
   </style>
 </head>
 <body>
 
-<!-- ✅ HEADER -->
+<!-- Header -->
 <header id="site-header">
-  <div class="container">
-    <!-- Logo -->
-    <a href="/" class="logo-link">
-      <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
-           alt="Shikisha Tours & Travel Logo" class="logo">
-    </a>
+  <!-- Logo -->
+  <a href="/" class="logo-link">
+    <img src="https://mlzhxckmvwh0.i.optimole.com/w:auto/h:auto/q:auto/id:68032be943c4aa7db8ed6c134b09c159/directUpload/LOGO.png" 
+         alt="Shikisha Tours & Travel Logo" class="logo">
+  </a>
 
-    <!-- Hamburger Menu (no ☰ inside) -->
-    <button class="hamburger" id="hamburger"></button>
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger"></button>
 
-    <!-- Navigation -->
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Safaris</a></li>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Experiences</a></li>
-        <li><a href="#">About Us</a></li>
-        <!-- CTA button appears last on mobile -->
-        <li class="mobile-cta"><a href="#" class="cta">Get a Free Quote</a></li>
-      </ul>
-    </nav>
-  </div>
+  <!-- Nav -->
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Safaris</a></li>
+      <li><a href="#">Destinations</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="#">About Us</a></li>
+      <li class="mobile-cta"><a href="#" class="cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
 </header>
-
-<style>
-/* Sticky Header */
-header {
-  background: #ffffff;
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-
-.container {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo */
-.logo {
-  width: 250px;
-  height: auto;
-  transition: all 0.3s ease;
-}
-
-/* Desktop Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #c75f00;
-}
-
-/* CTA Button */
-nav ul li .cta {
-  background: #c75f00;
-  color: #fff !important;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-nav ul li .cta:hover {
-  background: #a74c00;
-  transform: scale(1.05);
-}
-
-/* Shrink effect on scroll */
-header.shrink {
-  padding: 8px 0;
-}
-
-header.shrink .logo {
-  width: 180px;
-}
-
-/* Hamburger Button */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 28px;
-  z-index: 1001;
-  position: relative;
-}
-
-/* Default ☰ icon */
-.hamburger::before {
-  content: "☰";
-  font-size: 28px;
-  color: #333;
-}
-
-/* X icon when active */
-.hamburger.active::before {
-  content: "✖";
-  font-size: 28px;
-  color: #fff; /* contrast on blue bg */
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    width: 100%;   /* ✅ Full screen */
-    height: 100%;
-    background: #22A9E6;
-    padding: 80px 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    transition: left 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  nav.show {
-    left: 0;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-  }
-
-  nav ul li a {
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  .mobile-cta {
-    margin-top: 30px;
-  }
-
-  .mobile-cta .cta {
-    background: #fff;
-    color: #22A9E6 !important;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    display: block;
-    text-align: center;
-  }
-
-  .mobile-cta .cta:hover {
-    background: #f0f0f0;
-    color: #22A9E6 !important;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-  /* Hamburger as X */
-  .hamburger.active::before {
-    content: "✖";
-    font-size: 28px;
-    color: #333;
-  }
-
-  .hamburger::before {
-    content: "☰";
-    font-size: 28px;
-    color: #333;
-  }
-}
-</style>
 
 <script>
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
-// Toggle menu + change icon
+// Toggle menu + icon
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("show");
   hamburger.classList.toggle("active");
 });
 
 // Shrink header on scroll
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", () => {
   const header = document.getElementById("site-header");
   if (window.scrollY > 50) {
     header.classList.add("shrink");
