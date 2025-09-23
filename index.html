@@ -317,87 +317,66 @@ window.addEventListener("scroll", function() {
 /* Default (desktop & tablet) */
 .hero-slider {
   position: relative;
-  width: 100vw;
-  height: 100vh;   /* full screen height */
+  width: 100%;
+  height: 80vh;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
-/* Each slide */
-.hero-slider .slide {
-  position: absolute;
+/* Slides (stacked) */
+.slides {
+  position: relative;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
 }
 
-.hero-slider .slide img {
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1; /* below captions & dots */
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  z-index: 1; /* ensure image stays under caption */
 }
 
-/* Make sure body and html stretch correctly */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* ✅ Mobile Responsive */
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 60vh; /* shorter hero for mobile */
-  }
-
-  .caption h2 {
-    font-size: 1.4rem;
-  }
-
-  .caption p {
-    font-size: 0.85rem;
-  }
-}
-
-
-/* Dots Navigation */
-.dots {
+/* Captions */
+.caption {
   position: absolute;
-  bottom: 15px;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 5; /* ✅ always above slides */
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 15px 25px;
+  border-radius: 10px;
+  z-index: 3; /* ✅ keeps caption above image */
 }
 
-.dots button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255,0.6);
-  cursor: pointer;
-  transition: background 0.3s ease;
+.caption h2 {
+  font-size: 2rem;
+  margin: 0;
 }
 
-.dots button.active {
-  background: #22a9e6;
+.caption p {
+  margin-top: 5px;
+  font-size: 1rem;
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-  .caption h2 {
-    font-size: 1.5rem;
-  }
-  .caption p {
-    font-size: 0.9rem;
-  }
-}
 </style>
 
 
