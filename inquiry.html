@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Free Quote | Shikisha Tours & Travel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="inner-header">
+    <h1>Get a Free Quote</h1>
+    <p>Note: Requesting a quote is free, and there is no obligation to book.</p>
+  </header>
+
+  <main class="form-section">
+    <form action="send-quote.php" method="POST" class="quote-form">
+
+      <h2>Your Details</h2>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="country">Country of Residence:</label>
+      <select id="country" name="country" required>
+        <option value="">-- Select your country --</option>
+        <!-- ✅ Full 200+ expanded country list goes here -->
+      </select>
+
+      <label for="phone">Mobile Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="destination">Country You Want to Visit:</label>
+      <select id="destination" name="destination" required>
+        <option value="Kenya">Kenya</option>
+        <option value="Rwanda">Rwanda</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Uganda">Uganda</option>
+      </select>
+
+      <label for="duration">Tour Duration in Days:</label>
+      <input type="number" id="duration" name="duration" min="1" required>
+
+      <label for="tourtype">Tour Type You Are Most Interested In:</label>
+      <select id="tourtype" name="tourtype" required>
+        <option value="Private - Budget">Private Tours – Budget ($100–$280 pp/day)</option>
+        <option value="Private - Midrange">Private Tours – Mid-range ($250–$300 pp/day)</option>
+        <option value="Private - Luxury">Private Tours – Luxury ($350–$450 pp/day)</option>
+        <option value="Shared - Camping">Shared Tours – Camping ($150–$190 pp/day)</option>
+        <option value="Shared - Budget">Shared Tours – Budget ($100–$190 pp/day)</option>
+        <option value="Shared - Midrange">Shared Tours – Mid-range ($230–$300 pp/day)</option>
+        <option value="Shared - Luxury">Shared Tours – Luxury ($320–$400 pp/day)</option>
+      </select>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us more about your request..."></textarea>
+
+      <label>
+        <input type="checkbox" name="remember" value="yes">
+        Remember my message for future quote requests
+      </label>
+
+      <button type="submit" class="submit-btn">Send Request</button>
+      <p class="form-note">By clicking 'Send' you agree to our <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+    </form>
+  </main>
+
+</body>
+</html>
